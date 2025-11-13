@@ -9,7 +9,7 @@ consumer = KafkaConsumer(
 )
 
 file_path = 'crypto_prices.csv'
-print("✅ Consumer started. Listening to topic 'crypto_prices'...")
+print(" Consumer started. Listening to topic 'crypto_prices'...")
 
 while True:
     for message in consumer:
