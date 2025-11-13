@@ -30,17 +30,17 @@ while True:
             producer.send('crypto_prices', message)
             time.sleep(10)
         else:
-            log(f"⚠️ API responded unexpectedly: {data}")
+            log(f" API responded unexpectedly: {data}")
             time.sleep(30)
 
     except requests.exceptions.Timeout:
-        log("⏳ Timeout — API took too long to respond. Retrying in 20s...")
+        log(" Timeout — API took too long to respond. Retrying in 20s...")
         time.sleep(20)
 
     except requests.exceptions.ConnectionError:
-        log("🌐 Network glitch or rate-limit — waiting 20s before retry...")
+        log(" Network glitch or rate-limit — waiting 20s before retry...")
         time.sleep(20)
 
     except Exception as e:
-        log(f"❌ Unexpected error: {e}")
+        log(f" Unexpected error: {e}")
         time.sleep(20)
